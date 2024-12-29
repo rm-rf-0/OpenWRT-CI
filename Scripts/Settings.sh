@@ -36,17 +36,22 @@ echo "CONFIG_PACKAGE_luci=y" >> ./.config
 echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
-#SSR-Plus修改
+#插件调整
+echo "CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui=n" >> ./.config
+#SSR-Plus
 echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_libustream-openssl=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=n" >> ./.config
-#PassWall修改
+echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=n" >> ./.config
+#PassWall
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=n" >> ./.config
-echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geoview=n" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=n" >> ./.config
