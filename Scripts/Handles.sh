@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PKG_PATH="$GITHUB_WORKSPACE/wrt/package/"
+PKG_PATH="$GITHUB_WORKSPACE/wrt/package/"
 
 # #预置HomeProxy数据
 # if [ -d *"homeproxy"* ]; then
@@ -30,6 +31,7 @@ if [ -f "$PW_FILE" ]; then
 	sed -i '/Shadowsocks_NONE/d; /Shadowsocks_Libev/d; /ShadowsocksR/d' $PW_FILE
 
 	cd $PKG_PATH && echo "passwall has been fixed!"
+	cd $PKG_PATH && echo "passwall has been fixed!"
 fi
 
 SP_FILE=$(find ./ -maxdepth 3 -type f -wholename "*/luci-app-ssr-plus/Makefile")
@@ -39,6 +41,7 @@ if [ -f "$SP_FILE" ]; then
 	sed -i '/Shadowsocks_NONE/d; /Shadowsocks_Libev/d; /ShadowsocksR/d' $SP_FILE
 
 	cd $PKG_PATH && echo "ssr-plus has been fixed!"
+	cd $PKG_PATH && echo "ssr-plus has been fixed!"
 fi
 
 #修复TailScale配置文件冲突
@@ -46,5 +49,6 @@ TS_FILE=$(find ../feeds/packages/ -maxdepth 3 -type f -wholename "*/tailscale/Ma
 if [ -f "$TS_FILE" ]; then
 	sed -i '/\/files/d' $TS_FILE
 
+	cd $PKG_PATH && echo "tailscale has been fixed!"
 	cd $PKG_PATH && echo "tailscale has been fixed!"
 fi
