@@ -36,6 +36,14 @@ echo "CONFIG_PACKAGE_luci=y" >> ./.config
 echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
+#移除无关软件包
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=n" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=n" >> ./.config
 
 #手动调整的插件
 if [ -n "$WRT_PACKAGE" ]; then
